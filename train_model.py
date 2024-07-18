@@ -10,6 +10,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import joblib
 from sklearn.metrics import accuracy_score
+import os
+
+# Ensure the assets/models directory exists
+os.makedirs('assets/models', exist_ok=True)
 
 # Load and preprocess dataset
 df = pd.read_csv('C:\\Users\\91954\\ML\\Processed_Spam_SMS_Collection.csv')

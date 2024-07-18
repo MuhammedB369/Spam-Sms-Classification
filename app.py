@@ -6,12 +6,16 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import joblib
 
-# Load the TFIDF vectorizer and models
-tfidf = joblib.load('tfidf_vectorizer.pkl')
+# Ensure necessary NLTK resources are available
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+# Load the TF-IDF vectorizer and models
+tfidf = joblib.load('assets/models/tfidf_vectorizer.pkl')
 models = {
-    "Multinomial Naive Bayes": joblib.load('MultinomialNB_model.pkl'),
-    "Decision Tree": joblib.load('DecisionTree_model.pkl'),
-    "Random Forest": joblib.load('RandomForest_model.pkl')
+    "Multinomial Naive Bayes": joblib.load('assets/models/MultinomialNB_model.pkl'),
+    "Decision Tree": joblib.load('assets/models/DecisionTree_model.pkl'),
+    "Random Forest": joblib.load('assets/models/RandomForest_model.pkl')
 }
 
 # Text preprocessing function
